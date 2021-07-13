@@ -1,0 +1,23 @@
+package com.company;
+
+import java.util.Scanner;
+import static java.lang.Math.*;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Кол-во чисел в ряду: ");
+        int count=sc.nextInt();
+        System.out.print("e: ");
+        double e=sc.nextDouble();
+        double a;
+        double sum=0;
+        for(int n=0;n<count;n++){
+            a=1/pow(2,n)+1/pow(3,n);
+            if(abs(a)>=e){
+                sum+=a;
+            }
+        }
+        System.out.print("Result: "+sum);
+    }
+}
