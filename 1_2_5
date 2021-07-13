@@ -1,0 +1,19 @@
+package com.company;
+
+import java.util.Scanner;
+import static java.lang.Math.pow;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("x: ");
+        double x=sc.nextDouble();
+        if(x<=3){
+            x=pow(x,2)-3*x+9;
+        }
+        else{
+            x=1/pow(x,3)+6;
+        }
+        System.out.print("Result: "+x);
+    }
+}
