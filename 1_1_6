@@ -1,0 +1,22 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("x: ");
+        double x=sc.nextDouble();
+        System.out.print("y: ");
+        double y=sc.nextDouble();
+        if((x>-0.25 && x<0.15) && (y<-0.75 && y>-1.75)){
+            System.out.print("false");
+        }
+        else if(((x>-2 && x<2) && (y<4 && y>0)) || ((x>-4 && x<4) && (y>-3 && y<0))){
+            System.out.print("true");
+        }
+        else{
+            System.out.print("false");
+        }
+    }
+}
