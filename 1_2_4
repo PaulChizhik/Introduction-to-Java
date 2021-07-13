@@ -1,0 +1,25 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("a: ");
+        double a=sc.nextDouble();
+        System.out.print("b: ");
+        double b=sc.nextDouble();
+        System.out.print("x: ");
+        double x=sc.nextDouble();
+        System.out.print("y: ");
+        double y=sc.nextDouble();
+        System.out.print("z: ");
+        double z=sc.nextDouble();
+        if((a>=x && b>=y)||(b>=x && a>=y)||(a>=y && b>=z)||(a>=z && b>= x)||(a>=z && b>=y)||(a>=x && b>=z)){
+            System.out.print("Пройдет");
+        }
+        else{
+            System.out.print("Не пройдет");
+        }
+    }
+}
