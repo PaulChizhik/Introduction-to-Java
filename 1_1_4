@@ -1,0 +1,17 @@
+package com.company;
+
+import java.util.Scanner;
+import static java.lang.Math.*;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("n: ");
+        int n=sc.nextInt();
+        System.out.print("d: ");
+        int d=sc.nextInt();
+        double r=(n+n*10+n*100)+(d*0.001+d*0.01+d*0.1);
+        r=(r*1000)%1000+(int)r*0.001;
+        System.out.print(r);
+    }
+}
