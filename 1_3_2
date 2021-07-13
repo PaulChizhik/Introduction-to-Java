@@ -1,0 +1,25 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("a: ");
+        double a=sc.nextDouble();
+        System.out.print("b: ");
+        double b=sc.nextDouble();
+        System.out.print("h: ");
+        double h=sc.nextDouble();
+        double y;
+        for(double x=a;x<=b;x+=h){
+            if(x>2){
+                y=x;
+            }
+            else{
+                y=-x;
+            }
+            System.out.println("Result: "+y);
+        }
+    }
+}
