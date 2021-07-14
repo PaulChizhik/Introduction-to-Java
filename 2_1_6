@@ -1,0 +1,31 @@
+package com.company;
+
+import static java.lang.Math.random;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("n: ");
+        int n = sc.nextInt();
+        double[] a = new double[n];
+        for(int i=0;i<n;i++){
+            a[i]=random()*10;
+            System.out.print(String.format("%.2f",a[i])+" ");
+        }
+        int c=0;
+        System.out.println();
+        for(int i=0;i<n;i++) {
+            for (int j=1;j<=i;j++) {
+                if (i%j==0) {
+                    c++;
+                }
+            }
+            if (c==2) {
+                System.out.print(String.format("%.2f", a[i]) + " ");
+            }
+            c=0;
+        }
+    }
+}
