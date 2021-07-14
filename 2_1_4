@@ -1,0 +1,36 @@
+package com.company;
+
+import static java.lang.Math.random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("n: ");
+        int n = sc.nextInt();
+        double[] a = new double[n];
+        for(int i=0;i<n;i++){
+            a[i]=random()*10;
+            System.out.print(String.format("%.2f",a[i])+" ");
+        }
+        double min=a[0],max=a[0];
+        int min_index=0,max_index=0;
+        for(int i=0;i<n;i++){
+            if(min>a[i]){
+                min=a[i];
+                min_index=i;
+            }
+            if(max<a[i]){
+                max=a[i];
+                max_index=i;
+            }
+        }
+        double d=a[min_index];
+        a[min_index]=a[max_index];
+        a[max_index]=d;
+        System.out.println();
+        for(int i=0;i<n;i++){
+            System.out.print(String.format("%.2f",a[i])+" ");
+        }
+    }
+}
