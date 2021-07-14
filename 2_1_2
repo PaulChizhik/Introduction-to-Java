@@ -1,0 +1,28 @@
+package com.company;
+
+import static java.lang.Math.random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("n: ");
+        int n = sc.nextInt();
+        double[] a = new double[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = random()*10;
+            System.out.print(String.format("%.2f",a[i]) + " ");
+        }
+        System.out.print("\nz: ");
+        double z=sc.nextDouble();
+        int c=0;
+        for (int i = 0; i < n; i++) {
+            if(a[i]>z){
+                c++;
+                a[i]=z;
+            }
+            System.out.print(String.format("%.2f",a[i])+" ");
+        }
+        System.out.print("\nКол-во замен: "+c);
+    }
+}
