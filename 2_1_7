@@ -1,0 +1,24 @@
+package com.company;
+
+import static java.lang.Math.random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Кол-во элементов массива: ");
+        int n = sc.nextInt();
+        double[] a = new double[n];
+        for(int i=0;i<a.length;i++){
+            a[i]=random()*10;
+            System.out.print(String.format("%.2f",a[i])+" ");
+        }
+        double max=a[0]+a[a.length-1];
+        for(int i=1;i<=a.length/2;i++){
+            if(a[i]+a[a.length-i-1]>max){
+                max=a[i]+a[a.length-i-1];
+            }
+        }
+        System.out.print("\nResult: "+max);
+    }
+}
