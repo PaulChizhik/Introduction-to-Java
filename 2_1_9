@@ -1,0 +1,39 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Кол-во элементов массива: ");
+        int n = sc.nextInt();
+        double[] a = new double[n];
+        for(int i=0;i<a.length;i++){
+            a[i]=sc.nextDouble();
+            System.out.print(a[i]+" ");
+        }
+        int c=0;
+        int [] arr=new int [n];
+        for(int j=0;j<n;j++) {
+            for (int i=0; i<n; i++) {
+                if (a[j]==a[i]) {
+                    c++;
+                }
+            }
+            arr[j]=c;
+            c=0;
+        }
+        double x = a[0];
+        int y = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > y) {
+                y = arr[i];
+                x = a[i];
+            }
+            if ((y == arr[i]) && (a[i] < x)) {
+                x = a[i];
+            }
+        }
+        System.out.print("\nResult: "+x);
+    }
+}
