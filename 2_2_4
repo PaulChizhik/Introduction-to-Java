@@ -1,0 +1,36 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Кол-во строк и столбцов: ");
+        int n = sc.nextInt();
+        if(n<=3 || n%2!=0){
+            System.out.print("Error!");
+            System.exit(1);
+        }
+        else {
+            int[][] a = new int[n][n];
+            for(int i=0;i<n;i++){
+                if(i%2==0){
+                    for(int j=0;j<n;j++){
+                        a[i][j]=j+1;
+                    }
+                }
+                else{
+                    for(int j=0;j<n;j++){
+                        a[i][j]=n-j;
+                    }
+                }
+            }
+            for(int i=0;i<n;i++){
+                for(int j=0;j<n;j++){
+                    System.out.print(a[i][j]+"\t");
+                }
+                System.out.println();
+            }
+        }
+    }
+}
