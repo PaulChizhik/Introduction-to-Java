@@ -1,0 +1,25 @@
+package com.company;
+
+import java.util.Scanner;
+import static java.lang.Math.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Кол-во строк и столбцов: ");
+        int n = sc.nextInt();
+        double [][] a=new double [n][n];
+        int c=0;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                a[i][j]=sin((pow(i,2)-pow(j,2))/n);
+                if(a[i][j]>0){
+                    c++;
+                }
+                System.out.print(String.format("%.2f",a[i][j])+"\t");
+            }
+            System.out.println();
+        }
+        System.out.print("Result: "+c);
+    }
+}
