@@ -1,0 +1,60 @@
+package com.company;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Кол-во строк: ");
+        int n=sc.nextInt();
+        System.out.print("Кол-во столбцов: ");
+        int m=sc.nextInt();
+        int [][] a=new int [n][m];
+        Random r=new Random();
+        System.out.println("До сортировки: ");
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                a[i][j]=r.nextInt(10)+1;
+                System.out.print(a[i][j]+"\t");
+            }
+            System.out.println();
+        }
+        for(int q=0;q<n;q++) {
+            for (int j = 0; j < m; j++) {
+                for (int i = 0; i < n-1; i++) {
+                    if (a[i][j] > a[i+1][j]) {
+                        int t = a[i][j];
+                        a[i][j] = a[i+1][j];
+                        a[i+1][j] = t;
+                    }
+                }
+            }
+        }
+        System.out.println("По возрастанию: ");
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                System.out.print(a[i][j]+"\t");
+            }
+            System.out.println();
+        }
+        for(int q=0;q<n;q++) {
+            for (int j = 0; j < m; j++) {
+                for (int i = 0; i < n-1; i++) {
+                    if (a[i][j] < a[i+1][j]) {
+                        int t = a[i][j];
+                        a[i][j] = a[i+1][j];
+                        a[i+1][j] = t;
+                    }
+                }
+            }
+        }
+        System.out.println("По убыванию: ");
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                System.out.print(a[i][j]+"\t");
+            }
+            System.out.println();
+        }
+    }
+}
