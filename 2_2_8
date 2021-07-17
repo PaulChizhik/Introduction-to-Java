@@ -1,0 +1,46 @@
+package com.company;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Кол-во строк: ");
+        int n = sc.nextInt();
+        System.out.print("Кол-во столбцов: ");
+        int m = sc.nextInt();
+        int [][] a=new int [n][m];
+        Random r=new Random();
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                a[i][j]=r.nextInt(10)+1;
+                System.out.print(a[i][j]+"\t");
+            }
+            System.out.println();
+        }
+        System.out.print("Номер первого столбца: ");
+        int k=sc.nextInt();
+        System.out.print("Номер второго столбца: ");
+        int l=sc.nextInt();
+        if(k<0 || k>m || l<0 || l>m){
+            System.out.print("Error!");
+            System.exit(1);
+        }
+        else {
+            k-=1;
+            l-=1;
+            for (int i = 0; i < n; i++) {
+                int t = a[i][k];
+                a[i][k] = a[i][l];
+                a[i][l] = t;
+            }
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < m; j++) {
+                    System.out.print(a[i][j] + "\t");
+                }
+                System.out.println();
+            }
+        }
+    }
+}
