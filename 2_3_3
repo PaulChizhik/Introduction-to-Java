@@ -1,0 +1,35 @@
+package com.company;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Кол-во элементов массива: ");
+        int n=sc.nextInt();
+        int [] a=new int [n];
+        Random r=new Random();
+        for(int i=0;i<n;i++){
+            a[i]=r.nextInt(10);
+            System.out.print(a[i]+" ");
+        }
+        for (int i=0;i<n;i++) {
+            int max=a[i];
+            int maxId=i;
+            for (int j=i+1; j<n; j++) {
+                if (a[j]>max) {
+                    max=a[j];
+                    maxId=j;
+                }
+            }
+            int t=a[i];
+            a[i]=max;
+            a[maxId]=t;
+        }
+        System.out.println();
+        for(int i=0;i<n;i++){
+            System.out.print(a[i]+" ");
+        }
+    }
+}
