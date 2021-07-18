@@ -1,0 +1,52 @@
+package com.company;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Кол-во элементов в первом массиве: ");
+        int n=sc.nextInt();
+        System.out.print("Кол-во элементов во втором массиве: ");
+        int m=sc.nextInt();
+        if(n==m){
+            System.out.print("Error!");
+            System.exit(1);
+        }
+        else {
+            int[] a = new int[n + m];
+            int[] b = new int[m];
+            Random r = new Random();
+            for (int i = 0; i < n; i++) {
+                a[i] = r.nextInt(10) + 1;
+                System.out.print(a[i] + " ");
+            }
+            System.out.println();
+            for (int i = 0; i < m; i++) {
+                b[i] = r.nextInt(10) + 1;
+                System.out.print(b[i] + " ");
+            }
+            System.out.print("\nk: ");
+            int k = sc.nextInt();
+            if (k < 1 || k > n) {
+                System.out.print("Error!");
+                System.exit(1);
+            } else {
+                int q = 0;
+                for (int i = k; i < n; i++) {
+                    q++;
+                    a[n + m - q] = a[i];
+                }
+                q = 0;
+                for (int i = k; i < n + m - (n - k); i++) {
+                    a[i] = b[q];
+                    q++;
+                }
+                for (int i = 0; i < n + m; i++) {
+                    System.out.print(a[i] + " ");
+                }
+            }
+        }
+    }
+}
