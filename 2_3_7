@@ -1,0 +1,76 @@
+package com.company;
+
+import java.util.Scanner;
+import static java.lang.Math.random;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Кол-во элементов в первом массиве: ");
+        int n=sc.nextInt();
+        System.out.print("Кол-во элементов во втором массиве: ");
+        int m=sc.nextInt();
+        double [] a=new double [n];
+        double [] b=new double [m];
+        for(int i=0;i<n;i++){
+            a[i]=random()*10;
+        }
+        for(int i=0;i<m;i++){
+            b[i]=random()*10;
+        }
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n-1;j++){
+                if(a[j]>a[j+1]){
+                    double t=a[j];
+                    a[j]=a[j+1];
+                    a[j+1]=t;
+                }
+            }
+        }
+        System.out.println("1-st: ");
+        for(int i=0;i<n;i++){
+            System.out.print(String.format("%.2f",a[i])+" ");
+        }
+        for(int i=0;i<m;i++){
+            for(int j=0;j<m-1;j++){
+                if(b[j]>b[j+1]){
+                    double t=b[j];
+                    b[j]=b[j+1];
+                    b[j+1]=t;
+                }
+            }
+        }
+        System.out.println("\n2-nd: ");
+        for(int i=0;i<m;i++){
+            System.out.print(String.format("%.2f",b[i])+" ");
+        }
+        double [] c=new double [n+m];
+        for(int i=0;i<n;i++){
+            c[i]=a[i];
+        }
+        for(int i=0;i<m;i++){
+            c[i+n]=b[i];
+        }
+        for(int i=0;i<n+m;i++){
+            for(int j=0;j<n+m-1;j++){
+                if(c[j]>c[j+1]){
+                    double t=c[j];
+                    c[j]=c[j+1];
+                    c[j+1]=t;
+                }
+            }
+        }
+        System.out.println("\n3-rd: ");
+        for(int i=0;i<n+m;i++){
+            System.out.print(String.format("%.2f",c[i])+" ");
+        }
+        System.out.print("\nResult: ");
+        for(int i=0;i<n+m;i++){
+            for(int j=0;j<m;j++){
+                if(c[i]==b[j]){
+                    System.out.print(i+" ");
+                }
+            }
+        }
+    }
+}
