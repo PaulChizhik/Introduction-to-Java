@@ -1,0 +1,28 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a,b;
+        System.out.print("a: ");
+        a=sc.nextInt();
+        System.out.print("b: ");
+        b=sc.nextInt();
+        evklid(a,b);
+        nok(a,b);
+    }
+    public static int evklid(int x,int y){
+        while (y!=0) {
+            int tmp=x%y;
+            x=y;
+            y=tmp;
+        }
+        return x;
+    }
+    public static void nok(int x,int y){
+        System.out.print("НОД: "+evklid(x,y));
+        System.out.print("\nНОК: "+((x*y)/evklid(x,y)));
+    }
+}
