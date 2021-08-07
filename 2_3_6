@@ -6,7 +6,7 @@ import static java.lang.Math.random;
 public class Main {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        System.out.print("Кол-во элементов в первом массиве: ");
+        System.out.print("Кол-во элементов в массиве: ");
         int n=sc.nextInt();
         double [] a=new double [n];
         System.out.println("До сортировки: ");
