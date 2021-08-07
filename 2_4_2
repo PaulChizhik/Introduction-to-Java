@@ -1,0 +1,30 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a,b,c,d;
+        System.out.print("a: ");
+        a=sc.nextInt();
+        System.out.print("b: ");
+        b=sc.nextInt();
+        System.out.print("c: ");
+        c=sc.nextInt();
+        System.out.print("d: ");
+        d=sc.nextInt();
+        nod(a,evklid(b,evklid(c,d)));
+    }
+    public static int evklid(int x,int y){
+        while (y!=0) {
+            int tmp=x%y;
+            x=y;
+            y=tmp;
+        }
+        return x;
+    }
+    public static void nod(int x,int y){
+        System.out.print("НОД: "+evklid(x,y));
+    }
+}
