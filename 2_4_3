@@ -1,0 +1,19 @@
+package com.company;
+
+import java.util.Scanner;
+import static java.lang.Math.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a;
+        System.out.print("a: ");
+        a=sc.nextInt();
+        area(a);
+    }
+    public static void area(int x){
+        double S=pow(x,2)*sqrt(3)/4;
+        S*=6;
+        System.out.print("Площадь шестиугольника: "+String.format("%.2f",S));
+    }
+}
