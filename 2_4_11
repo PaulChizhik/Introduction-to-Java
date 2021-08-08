@@ -1,0 +1,43 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n;
+        System.out.print("n: ");
+        n=sc.nextInt();
+        int m;
+        System.out.print("m: ");
+        m=sc.nextInt();
+        if(n>=1 && m>=1) {
+            f(n, m);
+        }
+        else{
+            System.out.print("Error");
+            System.exit(1);
+        }
+    }
+    public static void f(int x,int y){
+        int n_count=0;
+        int m_count=0;
+        while(x>=1){
+            n_count++;
+            x/=10;
+        }
+        while(y>=1){
+            m_count++;
+            y/=10;
+        }
+        if(n_count>m_count){
+            System.out.print("Цифр больше в первом числе");
+        }
+        else if(n_count<m_count){
+            System.out.print("Цифр больше во втором числе");
+        }
+        else{
+            System.out.print("Кол-во цифр в первом и втором числах одинаково");
+        }
+    }
+}
