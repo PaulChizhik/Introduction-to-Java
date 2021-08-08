@@ -1,0 +1,35 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a,b,c;
+        System.out.print("a: ");
+        a=sc.nextInt();
+        System.out.print("b: ");
+        b=sc.nextInt();
+        System.out.print("c: ");
+        c=sc.nextInt();
+        f(a,b,c);
+    }
+    public static int gsd(int x,int y){
+        while (y!=0) {
+            int nod=x%y;
+            x=y;
+            y=nod;
+        }
+        return x;
+    }
+    public static void f(int x,int y,int z){
+        int s=0;
+        s=gsd(x,y)+gsd(y,z)+gsd(x,z);
+        if(s==3){
+            System.out.print("Числа взаимно простые");
+        }
+        else{
+            System.out.print("Числа не взаимно простые");
+        }
+    }
+}
