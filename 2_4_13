@@ -1,0 +1,23 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n;
+        System.out.print("n: ");
+        n=sc.nextInt();
+        f(n);
+    }
+    public static void f(int x){
+        if(x<=2){
+            System.exit(1);
+        }
+        else{
+            for(int i=x;i<=2*x-2;i++){
+                System.out.println(i+" "+(i+2));
+            }
+        }
+    }
+}
