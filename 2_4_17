@@ -1,0 +1,26 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n;
+        System.out.print("Введите число: ");
+        n=sc.nextInt();
+        int x=n;
+        int sum=0;
+        int count=0;
+        while(n!=0){
+            while(n>=1){
+                sum+=n%10;
+                n/=10;
+            }
+            x-=sum;
+            count++;
+            n=x;
+            sum=0;
+        }
+        System.out.print("Ответ: "+count);
+    }
+}
