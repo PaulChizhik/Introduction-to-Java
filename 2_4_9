@@ -1,0 +1,26 @@
+package com.company;
+
+import java.util.Scanner;
+import static java.lang.Math.sqrt;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int x,y,z,t;
+        System.out.print("x: ");
+        x=sc.nextInt();
+        System.out.print("y: ");
+        y=sc.nextInt();
+        System.out.print("z: ");
+        z=sc.nextInt();
+        System.out.print("t: ");
+        t=sc.nextInt();
+        area(x,y,z,t);
+    }
+    public static void area(int a,int b,int c,int d){
+        int p=0;
+        p=(a+b+c+d)/2;
+        double s=sqrt((p-a)*(p-b)*(p-c)*(p-d));
+        System.out.print("S: "+s);
+    }
+}
