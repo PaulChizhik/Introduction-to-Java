@@ -1,0 +1,32 @@
+package com.company;
+
+import java.util.Scanner;
+import static java.lang.Math.pow;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int k;
+        System.out.print("k: ");
+        k=sc.nextInt();
+        int sum=0;
+        int count=0,x;
+        for(int i=1;i<k;i++){
+            x=i;
+            while(x>=1){
+                count++;
+                x/=10;
+            }
+            x=i;
+            while(x>=1){
+                sum+=pow(x%10,count);
+                x/=10;
+            }
+            if(sum==i){
+                System.out.print(i+" ");
+            }
+            sum=0;
+            count=0;
+        }
+    }
+}
