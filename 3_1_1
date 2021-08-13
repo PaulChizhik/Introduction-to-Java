@@ -1,0 +1,16 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s;
+        System.out.print("Enter your text: ");
+        s=sc.nextLine();
+        String regex="([a-z])([A-Z]+)";
+        String rep="$1_$2";
+        s=s.replaceAll(regex,rep).toLowerCase();
+        System.out.print("Result: "+s);
+}
+}
