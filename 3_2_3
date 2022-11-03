@@ -1,0 +1,28 @@
+package com.company;
+
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    String s;
+    System.out.print("Исходная строка: ");
+    s=sc.nextLine();
+    int a=0;
+    int b=s.length()-1;
+    int c=0;
+    while(b>a){
+      if(s.charAt(a)!=s.charAt(b)){
+        c++;
+      }
+      b--;
+      a++;
+    }
+    if(c>0){
+      System.out.print("Строка не является палиндромом");
+    }
+    else{
+      System.out.print("Строка является палиндромом");
+    }
+  }
+}
