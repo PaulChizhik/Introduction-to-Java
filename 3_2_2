@@ -1,0 +1,14 @@
+package com.company;
+
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    String s;
+    System.out.print("Исходная строка: ");
+    s=sc.nextLine();
+    String s1=s.replaceAll("a","ab");
+    System.out.print("Результат: "+s1);
+  }
+}
