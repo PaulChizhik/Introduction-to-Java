@@ -1,0 +1,9 @@
+package com.company;
+
+public class Main{
+    public static void main(String[] args) {
+    String s="информатика";
+    String s1=s.charAt(7)+s.substring(3, 5)+s.charAt(7);
+    System.out.println("Исходная строка: "+s+"\nРезультат: "+s1);
+  }
+}
