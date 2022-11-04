@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    String s,s1;
+    System.out.print("Исходная строка: ");
+    s=sc.nextLine();
+    s1="";
+    for(int i=0;i<s.length();i++){
+      s1+=s.substring(i,i+1)+s.substring(i,i+1);
+    }
+    System.out.print("Результат: "+s1);
+  }
+}
